@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <style>
+        body {
+            
+            background-image:url("{{ url_for('static', filename=bg_pic) }}");            
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+        .bgform {
+            height: 250px;
+            width: 1000px;
+            font-family: sans-serif;
+            background-color: rgb(255, 255, 255); /* Fallback color */
+            background-color: rgba(255, 255, 255, 0.582); /* Black w/opacity/see-through */
+            background-size: 100% auto;
+            color: rgb(5, 5, 5);
+            margin-top: 225px;
+            margin-left: 10px;
+            
+        }
+        .table{
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+   
+    
+    <div class="bgform">
+            <table class="table table-hover">
+                <tr>
+                    <td>
+                        <!-- <h1>{{ deviceId.devicename }}<br></h1> -->
+                        <!-- <h3>{{ deviceId.deviceId }}</h3>    -->
+                        
+                        <p style="font-size: 36px;"><strong>{{ deviceId.name }}</strong></p>
+                        <div style="font-size: 20px;">{{ deviceId.dept_code }}
+                            <p>{{ deviceId.device_function }}</p> 
+                        </div>
+                        
+                        <div>
+                            <div style="display: inline-flex;"><a href="{{ '/edit_device/'+deviceId.deviceId }}">Edit your device</a></div>
+                            <div style="display: inline-flex;"><a href="{{ '/delete_device/'+deviceId.deviceId }}">Delete your device</a></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+    </div>
+
+
+
+</body>
+</html>
+
+
+
+

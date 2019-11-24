@@ -1,0 +1,43 @@
+<style>
+        body {            
+            background-color: rgba(76, 106, 167, 0.788) !important;            
+            color: white !important;
+        }
+    </style>
+    
+    
+    <body>
+            
+             <!-- % extends 'bootstrap/base.html' %} ONLY FOR ADDING BOOTSTRAP -->
+             
+        <div class="bgform" style="padding: 0px !important;">
+            {% extends "base.html" %}
+            {% import 'bootstrap/wtf.html' as wtf %}
+            <h1>Add New Device</h1>
+            {% block app_content %}
+                <div class="row">
+                    <div class="col-md-4">
+                        {{ wtf.quick_form(form) }}
+                    </div>
+                </div>
+                
+                <!-- <p>
+                        Uploade Device Photo <br><input type="file" accept="image/*"> NEED TO LET USER UPLOAD PHOTO OF THE DEVICE
+                        DURING EDITING ALSO HAVE TO LET USER CHANGE PHOTO 
+                </p> -->
+                <!-- <P> -->
+                    <!-- // DURING EDITING ALSO HAVE TO LET USER CHANGE PHOTO -->
+                    <!-- <select id="backgroundhtmlid" style="color: black !important;">
+                            <option value="" selected disabled>Select Background</option>
+    
+                            <option value="bg1id">BG1</option>
+                            <option value="bg2id">BG2</option>
+                            <option value="bg3id">BG3</option>                                                       
+                    </select>
+                </P> -->
+                
+            {% endblock %}
+        </div>
+        
+    </body>
+    

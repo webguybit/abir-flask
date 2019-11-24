@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <style>
+        body {
+            background-image:url("{{ url_for('static', filename=bg_pic) }}");            
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+
+        .bgform {
+            background-color: rgb(255, 255, 255); /* Fallback color */
+            background-color: rgba(233, 233, 233, 0.4); /* Black w/opacity/see-through */
+            color: rgb(5, 5, 5);
+        }
+
+    </style>
+
+<body>
+    {% extends "base.html" %}
+    {% block app_content %}
+    <div class="bgform">
+            <table class="table table-hover">
+                <tr>
+                    <td>
+                        <!-- <h1>{{ deviceId.devicename }}<br></h1> -->
+                        <!-- <h3>{{ deviceId.deviceId }}</h3>    -->
+                        <h1><strong>{{ deviceId.name }}</strong></h3>
+                        <h3>{{ deviceId.dept_code }}</h3>
+                        <h3>{{ deviceId.device_function }}</h3>
+                        <!-- % if user == 'a' % -->
+                        <p><a href="{{ url_for('edit_device',deviceId=deviceId) }}">Edit Information</a></p>
+                        <!-- % endif % -->
+                    </td>
+                </tr>
+            </table>
+    </div>
+
+
+    {% endblock %}
+</body>
+
+
+
+
+

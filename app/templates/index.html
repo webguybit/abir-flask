@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+            body {
+                background-color:rgba(76, 106, 167, 0.788) !important;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+            }
+            
+    </style>
+</head>
+<body>
+        <!-- background-image:url("{{ url_for('static', filename='bg1_bj.jpg') }}"); -->
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %} {{ title }}{% else %}Welcome to BMW{% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+    
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
+    
+
+</body>
+</html>
